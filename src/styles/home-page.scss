@@ -1,0 +1,93 @@
+.home-page {
+  position: relative;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__main-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 42%;
+    max-height: 80%;
+    object-fit: cover;
+    object-position: top;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__conteiner {
+    position: relative;
+    @include widthConteiner;
+    @include flex-column;
+    height: max-content;
+    padding: 48px 0 110px;
+
+    @include iPad {
+      padding-bottom: 48px;
+    }
+
+    @include mobile {
+      padding-top: 20px;
+    }
+  }
+
+  &__title {
+    @include h1;
+    padding-bottom: 16px;
+    @include scroll-appearance;
+  }
+
+  &__subTitle {
+    @include h2;
+    padding-bottom: 32px;
+  }
+
+  &__list {
+    @include flex-column;
+    gap: 20px;
+    padding-bottom: 40px;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 27px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 118%;
+    letter-spacing: -0.02em;
+    color: $main-text-color;
+
+    &::before {
+      content: url(../images/icons/check-mark.svg);
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+    }
+  }
+
+  &__btn {
+    @include button;
+    background-color: #485982;
+    color: #fff;
+    transition: all 0.4s ease;
+
+    &:hover {
+      box-shadow: 1px 4px 16px rgba(77, 69, 123, 0.7);
+    }
+  }
+
+  &__btn-icon {
+    height: 18px;
+    width: 18px;
+    object-fit: contain;
+  }
+}

@@ -1,0 +1,215 @@
+.header {
+  background-color: $blue-color;
+
+  &__conteiner {
+    @include flex-column;
+    justify-content: space-between;
+    @include widthConteiner;
+    padding: 18px 0 24px;
+    box-sizing: border-box;
+  }
+
+  &__menu {
+    display: none;
+
+    @include mobile {
+      position: absolute;
+      right: 20px;
+      display: block;
+      width: 18px;
+      height: 18px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url(../images/menu.svg);
+      background-color: transparent;
+      transition: all 0.4s ease;
+    }
+
+    &:hover {
+      background-image: url(../images/menu_hover.svg);
+    }
+  }
+
+  &__menu-close {
+    display: none;
+
+    @include mobile {
+      position: relative;
+      top: 20px;
+      right: 20px;
+      display: block;
+      align-self: flex-end;
+      width: 18px;
+      height: 18px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url(../images/cross.svg);
+      background-color: transparent;
+    }
+  }
+
+  &__logo {
+    @include logo;
+    height: 30px;
+    width: 160px;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__search-btn {
+    position: absolute;
+    display: block;
+    width: 18px;
+    height: 18px;
+    right: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: url(../images/icons/search.svg) no-repeat center;
+    background-size: contain;
+  }
+
+  &__city-label {
+    position: relative;
+
+    @include mobile {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+
+  &__input {
+    @include input;
+    box-sizing: border-box;
+  }
+
+  &__tel {
+    @include flex-center;
+    position: relative;
+    padding-left: 24px;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 130%;
+    color: #fff;
+    transition: all 0.4s ease;
+
+    &::before {
+      content: url("../images/icons/phone-yellow.svg");
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:hover {
+      color: $yellow-color;
+    }
+
+    @include mobile {
+      width: max-content;
+      align-self: flex-end;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 7px;
+
+    @include iPad {
+      margin-top: 14px;
+    }
+
+    @include mobile {
+      display: none;
+      transition: all 0.5s ease;
+
+      &--active {
+        @include flex-column;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        justify-content: flex-start;
+        align-items: flex-start;
+        box-sizing: border-box;
+        background-color: $blue-color;
+        z-index: 5;
+        overflow: hidden;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @include iPad {
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 14px;
+    }
+
+    @include mobile {
+      position: relative;
+      box-sizing: border-box;
+      top: 50px;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: space-between;
+      width: 100%;
+      padding: 20px;
+    }
+  }
+
+  &__nav-item {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  &__nav-link {
+    @include link;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.01em;
+    color: #fff;
+  }
+
+  &__btn {
+    @include button;
+    background-color: $yellow-color;
+    color: $blue-color;
+
+    &:hover {
+      box-shadow: 1px 4px 16px rgba(250, 255, 0, 0.7);
+    }
+
+    @include mobile {
+      position: relative;
+      top: 80px;
+      align-self: center;
+    }
+  }
+
+  &__btn-icon {
+    height: 18px;
+    width: 18px;
+    object-fit: contain;
+  }
+}

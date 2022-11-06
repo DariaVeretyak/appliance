@@ -1,0 +1,217 @@
+.footer {
+  background-color: $blue-color;
+
+  &__conteiner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    @include widthConteiner;
+    padding: 56px 0 108px;
+
+    @include iPad {
+      flex-direction: column;
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__actions {
+    @include flex-column;
+    width: 230px;
+    padding-right: 20px;
+
+    @include iPad {
+      width: 100%;
+    }
+  }
+
+  &__logo {
+    @include logo;
+    height: 39px;
+    width: 208px;
+    margin-bottom: 64px;
+
+    @include iPad {
+      margin-bottom: 32px;
+      justify-self: flex-end;
+    }
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__tel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 24px;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 130%;
+    color: #fff;
+    margin-bottom: 40px;
+    transition: all 0.4s ease;
+
+    &::before {
+      content: url('../images/icons/phone-yellow.svg');
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:hover {
+      color: $yellow-color;
+    }
+
+    @include iPad {
+      margin-bottom: 30px;
+    }
+
+    @include mobile {
+      font-size: 14px;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__contacts {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: -0.02em;
+    color: $footer-link-color;
+    margin-bottom: 32px;
+    transition: all 0.4s ease;
+
+    &:hover {
+      color: $yellow-color;
+    }
+
+    @include iPad {
+      margin-bottom: 20px;
+    }
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__btn {
+    @include button;
+    background-color: $yellow-color;
+    color: $blue-color;
+    margin-top: 14px;
+
+    &:hover {
+      box-shadow: 1px 4px 16px rgba(250, 255, 0, 0.7);
+    }
+
+    @include iPad {
+      margin-top: 8px;
+      justify-self: center;
+    }
+  }
+
+  &__btn-icon {
+    height: 18px;
+    width: 18px;
+    object-fit: contain;
+  }
+
+  &__menu {
+    display: flex;
+    gap: 80px;
+    padding-top: 54px;
+
+    @include iPad {
+      padding-top: 32px;
+      gap: 50px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+
+  &__menu-block {
+    @include flex-column;
+    width: max-content;
+    padding: 0 5px;
+  }
+
+  &__block-title {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 130%;
+    color: #fff;
+    padding-bottom: 16px;
+
+    @include iPad {
+      font-size: 16px;
+    }
+  }
+
+  &__block-list {
+    @include flex-column;
+    gap: 10px;
+  }
+
+  &__block-item {
+    @include link;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 120%;
+    color: $footer-link-color;
+  }
+
+  &__copyright {
+    position: absolute;
+    bottom: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 120%;
+    color: $footer-link-color;
+
+    @media (min-width: 768px) {
+      left: 0;
+    }
+
+    @include mobile {
+      right: 20px;
+    }
+  }
+
+  &__social-links {
+    position: absolute;
+    bottom: 108px;
+    right: 0;
+    display: flex;
+    gap: 20px;
+
+    @include iPad {
+      bottom: 16px;
+    }
+
+    @include mobile {
+      position: relative;
+      bottom: 0;
+      align-self: center;
+      padding-top: 18px;
+      padding-bottom: 24px;
+    }
+  }
+
+  &__social-link {
+    width: 30px;
+    height: 30px;
+    transition: all 0.4s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

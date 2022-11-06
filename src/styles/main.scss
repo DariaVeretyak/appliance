@@ -1,7 +1,40 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "./utils";
+@import "./typography";
+
+@import "./page.scss";
+@import "./header.scss";
+@import "./home-page.scss";
+@import "./footer.scss";
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+li {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  outline: none;
+  border: none;
 }
